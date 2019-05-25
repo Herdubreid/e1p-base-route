@@ -1,0 +1,42 @@
+<div class="demo-fm">
+    <div data-bind="foreach: fms$">
+        <div class="row">
+            <div class="col p-2">
+                <button data-bind="click: $parent.toggle" type="button" class="btn btn-lg btn-block btn-outline-primary">
+                    <div class="row">
+                        <div class="col"></div>
+                        <div data-bind="text: `${title} (${fm})`" class="col-10">
+                        </div>
+                        <div class="col"><i data-bind="attr: { id: `button-${fm}` }" class="fas fa-angle-double-down rotate-90"></i></div>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div data-bind="attr: { id: fm }" class="collapse">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th><span data-bind="text: ff.length > 0 ? '' : 'No '"></span>Form Fields</th>
+                    </tr>
+                </tbody>
+                <tbody data-bind="foreach: ff">
+                    <tr>
+                        <td data-bind="text: field"></td>
+                        <td data-bind="text: title"></td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th><span data-bind="text: gf.length > 0 ? '' : 'No '"></span>Grid Fields</th>
+                    </tr>
+                </tbody>
+                <tbody data-bind="foreach: gf">
+                    <tr>
+                        <td data-bind="text: field"></td>
+                        <td data-bind="text: title"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
